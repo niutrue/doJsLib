@@ -1,4 +1,5 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -7,10 +8,7 @@ module.exports = {
         path: path.resolve(__dirname,'dist'),
         filename: '[name].js'
     },
-    mode: 'development',
-    devServer: {
-        contentBase: './dist'
-    },
+    mode: 'production',
     module: {
         rules: [{
             test: '/\.js$/',
@@ -24,8 +22,9 @@ module.exports = {
         }]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: '测试js库'
+            title:'测试js库'
         })
     ]
-};
+}

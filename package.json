@@ -4,7 +4,7 @@
   "description": "基于webpack用来开发js库的脚手架",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.build.js",
     "start": "webpack-dev-server --open"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
